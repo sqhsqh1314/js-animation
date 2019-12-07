@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function ()
+			{
+				var oUl=document.getElementsByClassName('ul1')[0];
+				
+				if (oUl.firstElementChild) {
+					oUl.firstElementChild.style.background='red';					
+				} else{
+					oUl.firstChild.style.background='red';//兼容IE7以下的浏览器					
+				}
+				var input1=document.getElementsByTagName('input')[0];
+				var input2=document.getElementsByTagName('input')[1];
+				input2.onclick=function (){
+//					input1.value='fsfsfs';
+                       input1.setAttribute('value','fsfsf');
+                       input1.setAttributeNode();
+
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<ul class="ul1">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="div2">
+			<input type="text" />
+			<input type="button" value="点击">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function (){
+				var oUl=document.getElementById('ul1');
+				var oFrag=document.createDocumentFragment();
+				var obtn=document.getElementById('in1');
+			
+//				obtn.onclick=function (){
+					for (var i=0;i<100;i++) {
+						var oLi=document.createElement('li');
+						oFrag.appendChild(oLi);
+						
+//					}
+				}
+				oUl.appendChild(oFrag);
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="创建" id="in1" />
+		<ul id="ul1">
+		</ul>
+	</body>
+</html>

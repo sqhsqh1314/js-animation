@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divv{
+				width: 100px;
+				height: 100px;
+				background: gold;
+			}
+		</style>
+	</head>
+	<script>
+		function tochange(name,value){
+			var change=document.getElementById('divv');
+			change.style[name]=value;
+		}
+	</script>
+	<body>
+		<input type="button" value="变宽" onclick="tochange('width','200px')"/>
+		<input type="button" value="变红" onclick="tochange('background','red')"/>
+		<input type="button" value="变长" onclick="tochange('height','200px')" />
+		<div id="divv">		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divv {
+				width: 200px;
+				height: 200px;
+				background: cornsilk;
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var in1=document.getElementById('in1');
+				var in2=document.getElementById('in2');
+				var adiv=document.getElementById('divv');
+				in2.onclick=function (){
+					adiv.innerHTML=in1.value;
+					
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<input type='text' title="nnn" id="in1" />
+		<input type="button" value="确定" id="in2" />
+		<div id="divv">
+			
+		</div>
+		
+	</body>
+</html>

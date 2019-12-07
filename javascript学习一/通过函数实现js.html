@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divv{
+			width:400px;
+			height: 400px;
+			background: red;
+			
+			}		
+		</style>
+	</head>
+	<script>
+	function toRed(){
+			document.getElementById('divv').style.width='400px';
+			document.getElementById('divv').style.height='400px';
+			document.getElementById('divv').style.background='red';			
+		}
+	function toGreen(){
+		document.getElementById('divv').style.width='500px';
+		document.getElementById('divv').style.height='500px';
+		document.getElementById('divv').style.background='green';
+	}
+	</script>
+	<body>
+		<div id="divv" onmouseover="toGreen()" onmouseout="toRed()">
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				left: 1200px;
+			}
+			.div2{
+				width: 1px;
+				height: 200px;
+				background: black;
+				left: 600px;
+				position: absolute;
+			}			
+		</style>
+		<script>
+			window.onload=function (){
+				var oBtn=document.getElementsByClassName('btn1')[0];
+				oBtn.onclick=function(){
+					yundong(600);
+				}
+				var timer=null
+				function yundong(iTraget){
+					var oDiv=document.getElementsByClassName('div1')[0];
+//					clearInterval(timer);
+//					timer=setInterval(function (){
+//						var speed=(iTraget-oDiv.offsetLeft)/14;
+//						speed=speed>0?Math.ceil(speed):Math.floor(speed);
+//						if (Math.abs(iTraget-oDiv.offsetLeft)<=14) {
+//							clearInterval(timer);
+//							oDiv.style.left=iTraget+'px';
+//							
+//						} else{
+//							oDiv.style.left=oDiv.offsetLeft+speed+'px';
+//							document.title=oDiv.offsetLeft;
+//						
+//						}						
+//					},30)
+					
+					clearInterval(timer);
+//				var speed=(iTraget-obj.offsetWidth)/6;
+//				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+//				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				timer=setInterval(function (){
+				var speed=(iTraget-oDiv.offsetLeft)/7;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if (oDiv.offsetLeft==iTraget) {
+					clearInterval(timer);
+					oDiv.style.left=iTraget+'px';
+				} else{
+					oDiv.style.left=oDiv.offsetLeft+speed+'px';					
+				}					
+				},30)
+				
+				}			
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" class="btn1" value="运动"/>
+		<div class="div1">
+			
+		</div>
+		<div class="div2">
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

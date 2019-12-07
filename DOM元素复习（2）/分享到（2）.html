@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+			}
+			.div1{
+				width:100px;
+				height:200px;
+				background: red;
+				float: left;
+				left: -100px;
+				position: absolute;
+				margin-left: 0;				
+			}
+			.div2{
+				width: 20px;
+				height: 70px;
+				background: gold;
+				float:left;
+				position: absolute;
+				left: 100px;
+				top: 60px;				
+			}
+			span{
+				font-size: 15px;
+			}
+			
+		</style>
+		<script>
+			
+			window.onload=function (){
+				var oDiv=document.getElementsByClassName('div1')[0];									
+				oDiv.onmouseover=function (){					
+					mouseover1(0);
+				}
+				oDiv.onmouseout=function (){
+					mouseover1(-100);
+					
+				}
+				var timer=null;
+				function mouseover1(iTarget){
+					var oDiv=document.getElementsByClassName('div1')[0];
+					var speed=0;
+					clearInterval(timer);							
+					timer=setInterval(function (){
+						if (oDiv.offsetLeft>iTarget) {
+							speed=-10;
+							
+						} else{
+							speed=10;
+							
+						}
+						if (oDiv.offsetLeft==iTarget) {
+						clearInterval(timer);
+											
+					  } else{
+						oDiv.style.left=oDiv.offsetLeft+speed+'px';	
+										
+					}		
+											
+					},30)				
+			}
+				}
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<p>QQ:4149288</p>
+			<div class="div2">
+			<span>分享到</span>
+		</div>
+		</div>
+		
+	</body>
+</html>

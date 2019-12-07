@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function toDou(n){
+				if (n<10) {
+					return '0'+n;					
+				} else{
+					reutrn ''+n;				
+				}				
+			}
+			window.onload=function (){
+				var aImg=document.getElementsByTagName('img');
+				function tick(){
+					var oDate=new Date();
+					var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+					for (var i=0;i<aImg.length;i++) {
+//						aImg[i].src='img/'+str[i]+'.png';
+						aImg[i].src='img/'+str.charAt(i)+'.png';					
+					}
+				}
+				setInterval(tick,1000);
+				tick();
+			}
+		</script>
+	</head>
+	<body>
+		<img src=".img/1.png" />
+		<img src=".img/2.png" />
+		<img src=".img/3.png" />
+		<img src=".img/4.png" />
+		<img src=".img/5.png" />
+		<img src=".img/6.png" />
+		<img src=".img/7.png" />
+	</body>
+</html>

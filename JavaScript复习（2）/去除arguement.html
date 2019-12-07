@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div1{
+				width: 200px;
+				height: 200px;
+				background: gold;
+			}
+		</style>
+		<script>
+			function yinshi(obj,name,value){
+				if (arguments.length==2) {
+					return obj.style[name];					
+				} else{
+					obj.style[name]=value;					
+				}				
+			}
+			window.onload=function(){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				yinshi(oDiv,'width','300px');
+				alert(yinshi(oDiv,'width'));
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1" style="width: 200px;height: 200px;" >
+			
+		</div>
+	</body>
+</html>

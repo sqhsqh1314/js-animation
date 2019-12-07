@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#ul1{
+				background: green;
+			}	
+			#ul2{
+				background: red;
+			}		
+		</style>
+		<script>
+			window.onload=function (){
+				var aUl1=document.getElementById('ul1');
+				var aUl2=document.getElementById('ul2');
+				var oBtn=document.getElementById('btn1');
+				oBtn.onclick=function (){
+					var oLi=aUl1.children[0];
+//					aUl1.removeChild(oLi);
+					aUl2.appendChild(oLi);//1先将元素从原有父级上删除。2添加到新的父级
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<ul id="ul1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<input  id="btn1" type="button" value="确定" /><br />
+		<ul id="ul2">
+						
+		</ul>
+	</body>
+</html>

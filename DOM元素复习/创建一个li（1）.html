@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function (){
+				var oIn1=document.getElementsByTagName('input')[0];
+				var oIn2=document.getElementsByTagName('input')[1];
+				var oUl=document.getElementsByClassName('ul1')[0];
+				oIn2.onclick=function (){
+					var oLi=document.createElement('li');
+					oLi.innerHTML=oIn1.value;
+					//父级.appendChild(子节点)
+					oUl.appendChild(oLi);
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="button" value="添加" />
+		<div>
+			<ul class="ul1">
+				
+			</ul>
+		</div>
+	</body>
+</html>

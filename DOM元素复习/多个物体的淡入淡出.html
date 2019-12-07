@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function (){
+				var aDiv=document.getElementsByTagName('div');
+//				alert(aDiv.length);
+               for (var i=0;i<aDiv.length;i++) {
+               	aDiv[i].alpha=30;
+               	aDiv[i].timer=null;
+               	aDiv[i].onmouseover=function (){
+               		startmove(this,100);
+               		
+               	}
+               	aDiv[i].onmouseout=function (){
+               		startmove(this,30);
+               	}               	
+               }
+               
+               function startmove(obj,iTraget){               	
+               	clearInterval(obj.timer);
+               	obj.timer=setInterval(function (){
+               		var speed=(iTraget-obj.alpha)/5;
+               		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+               		if (iTraget==obj.alpha) {
+               			clearInterval(obj.timer);
+               			
+               		} else{
+               			obj.alpha+=speed;
+               			obj.style.filter='alpha(opacity:'+obj.alpha+')';
+               			obj.style.opacity=obj.alpha/100;
+               			
+               		}
+               		
+               		
+               		
+               	},30)
+               	
+               	
+               	
+               	
+               	
+               }
+
+			}
+			
+		</script>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: gold;
+				filter: alpha(opacity:30);
+				opacity: 0.3;
+				margin: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div>
+		
+	</body>
+</html>

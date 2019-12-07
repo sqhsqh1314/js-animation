@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span{
+				font-size: 100px;
+			}
+			
+		</style>
+		<script>
+			function todou(n){
+				if(n<10){
+					return '0'+n;
+				}else{
+					return ''+n;					
+				}				
+			}
+			
+			window.onload=function(){
+				var aImg=document.getElementsByTagName('img');
+				function piaobiao(){
+				var oDate=new Date();
+				var str=todou(oDate.getHours())+todou(oDate.getMinutes())+todou(oDate.getSeconds());
+				for(var i=0;i<aImg.length;i++){
+//					aImg[i].src='img/'+str[i]+'.jpg';
+					//兼容问题的求解
+					aImg[i].src='img/'+str.charAt(i)+'.jpg';//解决了IE6无法识别str[]的兼容性问题
+				}				
+				}
+				setInterval(piaobiao,1000);
+				piaobiao();
+			}
+			
+		</script>
+	</head>
+		<body style="background: gray;">
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		<span>:</span>
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		<span>:</span>
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		
+	</body>
+</html>

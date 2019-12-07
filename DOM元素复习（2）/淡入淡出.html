@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div1{
+				width: 200px;
+				height: 300px;
+				background: gold;
+				//兼容IE浏览器
+				//兼容火狐或者Chrome浏览器
+				filter: alpha(opacity:30);
+				opacity:0.3;
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				oDiv.onmouseover=function (){
+					change(100);
+					
+				}
+				oDiv.onmouseout=function (){
+					change(30);
+				}
+				var aph=30;
+				var timer=null;
+				function change(iTrage){
+					clearInterval(timer);
+					timer=setInterval(function (){
+						if (iTrage>aph) {
+							speed=10;							
+						} else{
+							speed=-10;							
+						}	
+						if (iTrage==aph) {
+							clearInterval(timer);
+							
+						} else{
+							aph+=speed;
+							oDiv.style.filter='alpha(opacity:'+aph+')';
+							oDiv.style.opacity=aph/100;
+							
+							
+						}
+					},30)
+					
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			
+		</div>
+	</body>
+</html>

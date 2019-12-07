@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#divv .bt1{
+				background: gold;	
+			}
+			#divv div{
+				width: 200px;height: 200px;background: aqua;border: 1px solid black;display: none;
+						}
+		</style>
+		<script>
+			window.onload=function (){
+				var div=document.getElementById('divv');
+				var abtn=div.getElementsByTagName('input');
+				var adiv=div.getElementsByTagName('div');
+				for (var i=1;i<abtn.length;i++) {
+					abtn[i].index=i;
+					abtn[i].onclick=function (){
+						for (var i=0;i<abtn.length;i++) {
+							abtn[i].className='';
+							adiv[i].style.display='none';	
+						}
+						this.className='bt1';
+					    adiv[this.index].style.display='block';
+					};			
+				}						
+			};			
+		</script>
+	</head>
+	<body>
+		<div id="divv">
+		<input class="bt1" type="button" value="国际"/>
+		<input id="bt2" type="button" value="军事"/>
+		<input id="bt3" type="button" value="经济"/>
+		<input id="bt4" type="button" value="政治"/>
+		<div style="display: block;">
+			111111</div>
+		<div class="div2">
+			222222</div>
+		<div class="div3">
+			333333</div>
+		<div class="div4">
+			444444</div>
+			</div>
+	</body>
+</html>

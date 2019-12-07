@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 10px;
+			}
+			
+		</style>
+		<script>
+			window.onload=function (){
+				var oDiv1=document.getElementsByClassName('div1')[0];
+				var oDiv2=document.getElementsByClassName('div2')[0];
+				var oDiv3=document.getElementsByClassName('div3')[0];
+				oDiv1.onmouseover=function (){
+					var timer=null;
+					startmove(oDiv1,300);
+				}
+				oDiv1.onmouseout=function (){
+					var timer=null;
+					startmove(oDiv1,200);
+				}
+				oDiv2.onmouseover=function (){
+					startmove();
+				}
+				oDiv2.onmouseout=function (){
+					startmove();
+				}
+				
+			}
+			
+			
+			function startmove(obj,iTraget){
+				
+				clearInterval(obj.timer);
+//				var speed=(iTraget-obj.offsetWidth)/6;
+//				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+//				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				obj.timer=setInterval(function (){
+				var speed=(iTraget-obj.offsetWidth)/7;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if (obj.offsetWidth==iTraget) {
+					clearInterval(obj.timer);					
+				} else{
+					obj.style.width=obj.offsetWidth+speed+'px';					
+				}					
+				},30)
+							
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			
+		</div>
+		<div class="div2">
+			
+		</div>
+		<div class="div3">
+			
+		</div>
+	</body>
+</html>

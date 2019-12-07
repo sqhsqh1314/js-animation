@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				alert(oDiv.childNodes.length);//结果是五，因为他包含了三个空的文本节点。
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</body>
+</html>

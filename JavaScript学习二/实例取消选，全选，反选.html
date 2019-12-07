@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divv{
+				width: 200px;
+				height: 200px;
+				
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				var sbtn=oDiv.getElementsByTagName('input');
+				
+//				
+//				var t1=document.getElementById('bt1');
+//				var t2=document.getElementById('bt2');
+//				var t3=document.getElementById('bt3');
+				var in1=document.getElementsByClassName('divv')[0];
+				var inp=in1.getElementsByTagName('input');
+				
+				sbtn[0].onclick=function (){
+					for( var i=0;i<inp.length;i++)
+					{
+						inp[i].checked=true;
+					}
+			
+				};
+				sbtn[1].onclick=function (){
+					for (var i=0;i<inp.length;i++) {
+						
+						inp[i].checked=false;
+						
+					}
+				};
+				sbtn[2].onclick=function (){
+					for (var i=0;i<inp.length;i++) {
+						if (inp[i].checked==true) {
+							inp[i].checked=false;
+							
+						} else{
+							inp[i].checked=true;
+							
+						}
+						
+					}
+				}
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+		<input type="button" id="bt1" value="全选" />
+		<input type="button" id="bt2" value="取消全选" />
+		<input type="button" id="bt3" value="反选" />
+		</div>
+		<div class="divv">
+			<input type="checkbox"  />wqeq<br />
+			<input type="checkbox"  />231<br />
+			<input type="checkbox"  />324<br />
+			<input type="checkbox"  />3424<br />
+			<input type="checkbox"  />23442<br />
+			<input type="checkbox"  />324<br />
+			<input type="checkbox"  />243<br />
+		</div>
+	</body>
+</html>

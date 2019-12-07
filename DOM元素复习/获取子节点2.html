@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function (){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				var oUl=oDiv.getElementsByTagName('ul')[0];			
+				for (var i=0;i<oUl.childNodes.length;i++) {
+					if (oUl.childNodes[i].nodeType==1) {						
+						oUl.childNodes[i].style.background='red';						
+					}					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<ul>
+				<li></li>ihhhh
+				<li></li>
+				<li></li>
+			</ul>
+			
+		</div>
+		
+	</body>
+</html>

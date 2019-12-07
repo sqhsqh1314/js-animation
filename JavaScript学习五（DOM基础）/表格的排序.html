@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">						
+		</style>
+		<script>
+			window.onload=function () {
+				var oBtn=document.getElementById('in1');
+				var oTab=document.getElementById('tab1');
+				oBtn.onclick=function (){
+					var arr=[];
+					for (var i=0;i<oTab.tBodies[0].rows.length;i++) {
+						arr[i]=oTab.tBodies[0].rows[i];
+					}
+					arr.sort(function (tr1,tr2){
+						var n1=parseInt(tr1.cells[0].innerHTML);
+						var n2=parseInt(tr2.cells[0].innerHTML);
+						return n1-n2;
+					});
+					for (var i=0;i<arr.length;i++) {
+						oTab.tBodies[0].appendChild(arr[i]);
+											}
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<input id="in1" type="button" value="排序"/>
+			<caption>表</caption>
+		<table id="tab1" border="1px" cellpadding="10" cellspacing="0">
+			<tr>
+				<th>id</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李四</td>
+				<td>19</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>贵福</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>张三</td>
+				<td>22</td>
+			</tr>
+		</table>
+			
+			
+			
+			
+		</div>
+		
+		
+	</body>
+</html>

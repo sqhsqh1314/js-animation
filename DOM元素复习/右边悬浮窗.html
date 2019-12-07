@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+			}
+			.div1{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				background: red;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+		<script>
+			window.onscroll=function (){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+//				oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop;
+//计算中间的位置           
+//            oDiv.style.top=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;  
+                  
+                
+                 
+                 starmove(scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2);
+//				starmove(document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop);
+			}
+			var timer=null;
+			function starmove(iTraget){
+				var oDiv=document.getElementsByClassName('div1')[0];
+				clearInterval(timer);
+				timer=setInterval(function (){
+					var speed=(iTraget-oDiv.offsetTop)/10;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if (Math.abs(iTraget-oDiv.offsetTop)<=10) {
+						clearInterval(timer);
+						oDiv.style.top=iTraget+'px';
+						
+					} else{
+						oDiv.style.top=oDiv.offsetTop+speed+'px';
+						
+						
+						
+					}
+					
+					
+				},30)				
+			}
+		</script>
+	</head>
+	<body style="height: 1500px;">
+		<div class="div1">
+			
+		</div>
+		
+	</body>
+</html>

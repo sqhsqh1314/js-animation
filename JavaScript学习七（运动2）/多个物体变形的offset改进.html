@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				float: left;
+				margin-right: 20px;
+				border: 2px solid red;
+			}
+			#div2{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				float: left;
+				margin-right: 20px;
+				border: 10px solid lightseagreen;
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var oDiv1=document.getElementById('div1');
+					oDiv1.onmouseover=function (){
+						startMove(this,'height',400);
+						
+					}
+					oDiv1.onmouseout=function (){
+						startMove(this,'height',200);
+						
+					}
+					var oDiv2=document.getElementById('div2');
+					oDiv2.onmouseover=function (){
+						startMove(this,'width',400);
+						
+					}
+					oDiv2.onmouseout=function (){
+						startMove(this,'width',200);
+						
+					}
+				
+			}
+			function getStyle(obj,name){
+				if (obj.currentStyle) {
+					return obj.currentStyle[name];
+					
+				} else{
+					return getComputedStyle(obj,false)[name];
+				}
+			}		
+			
+			function startMove(obj,tra,iTraget){
+				clearInterval(obj.timer);				
+				obj.timer=setInterval(function (){				
+					var cur=parseInt(getStyle(obj,tra));
+					var speed=(iTraget-cur)/5;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if (cur==iTraget) {
+				
+					clearInterval(obj.timer);
+					} else{
+						obj.style[tra]=cur+speed+'px';						
+					}
+				},30)
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="div1">变高</div>
+		<div id="div2">变宽</div>
+	</body>
+</html>
+

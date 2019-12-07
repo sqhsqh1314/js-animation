@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;height: 300px;
+				background: gold;
+				margin-bottom: 20px;
+			}
+			
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var aDiv=document.getElementsByTagName('div');
+				for (var i=0;i<aDiv.length;i++) {
+					aDiv[i].timer=null;
+					aDiv[i].onmouseover=function (){
+						startMouse(this,400);
+					}
+						aDiv[i].onmouseout=function (){
+						startMouse(this,100);
+					}
+				}
+			}	
+				function startMouse(obj,iTraget)
+				{
+					clearInterval(obj.timer);
+					obj.timer=setInterval(function (){
+						var speed=(iTraget-obj.offsetWidth)/7;
+						speed=speed>0?Math.ceil(speed):Math.floor(speed);
+						if (obj.offsetWidth==iTraget) {
+							clearInterval(obj.timer);
+							
+						} else{
+							obj.style.width=obj.offsetWidth+speed+'px';
+						}
+						
+					},30)
+				}
+				
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+	</body>
+</html>

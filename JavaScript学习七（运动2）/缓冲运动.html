@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+			}
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 600px;top: 50px;				
+			}
+			#div2{
+				width: 1px;height: 200px;background: red;
+				position: absolute;
+				left: 400px;
+				top: 50px;
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var oBtn=document.getElementById('in1');
+				oBtn.onclick=function (){
+					sMove();
+					
+				}
+				function sMove(){
+					var oDiv=document.getElementById('div1');
+					setInterval(function (){
+						var speed=(300-oDiv.offsetLeft)/10;
+						speed=speed>0?Math.ceil(speed):Math.floor(speed);
+						oDiv.style.left=oDiv.offsetLeft+speed+'px';
+						
+					},30)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="开始运动" id="in1" />
+		<div id="div1">
+			
+		</div>
+		<div id="div2"></div>
+	</body>
+</html>

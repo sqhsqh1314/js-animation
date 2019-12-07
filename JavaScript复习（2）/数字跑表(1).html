@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span{
+				font-size: 100px;
+			}
+		</style>
+		<script>
+			function todou(n){
+				if (n<10) {
+					return '0'+n;
+					
+				} else{
+					return ''+n;					
+				}
+				
+			}
+			window.onload=function (){
+				var aImg=document.getElementsByTagName('img');
+				setInterval(function (){
+				var oDate=new Date();
+				var str=todou(oDate.getHours())+todou(oDate.getMinutes())+todou(oDate.getSeconds());
+				for (var i=0;i<aImg.length;i++){
+					aImg[i].src='img/'+str[i]+'.jpg';					
+				}					
+				},1000)				
+			};
+			
+		</script>
+	</head>
+	<body style="background: gray;">
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		<span>:</span>
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		<span>:</span>
+		<img src="img/0.jpg" />
+		<img src="img/0.jpg" />
+		
+	</body>
+</html>

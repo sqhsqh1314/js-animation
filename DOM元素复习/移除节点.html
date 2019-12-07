@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function (){
+				var aOa=document.getElementsByTagName('a');
+				var oUl=document.getElementsByTagName('ul')[0];
+//				var oUl=document.getElementById('ul1');				
+				for (var i=0;i<aOa.length;i++) 
+				{
+					aOa[i].onclick=function ()
+					{						
+						oUl.removeChild(this.parentNode);
+				    }					
+				}				
+			}			
+		</script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>sfhsfsj<a href="javascript:;">删除</a></li>
+			<li>gdbnnf<a href="javascript:;">删除</a></li>
+			<li>4845idkd<a href="avascript:;">删除</a></li>
+			<li>viw9499<a href="javascript:;">删除</a></li>
+			<li>5669vnsnif<a href="javascript">删除</a></li>
+		</ul>
+	</body>
+</html>

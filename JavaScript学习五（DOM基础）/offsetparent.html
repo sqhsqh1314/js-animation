@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				height: 200px;
+				width: 200px;
+				background: red;
+				border: solid, 10px, black;
+				position: relative;	
+				float: left;	
+				margin: 100px;
+					
+			}
+			#div2{
+				width: 100px;
+				height: 100px;
+				background: green;
+				position: absolute;	
+				left: 50px;
+				right: 50px;
+				top: 50px;
+							
+			}
+		</style>
+		<script>
+			window.onload=function (){
+			var oDiv1=document.getElementById('div1');
+			alert(oDiv1.offsetParent);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">				
+			</div>
+		</div>
+	</body>
+</html>

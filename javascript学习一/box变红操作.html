@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divv{
+				width: 200px;
+				height: 400px;
+				border: 1px solid black;
+			}
+			.box{
+				background: red;
+			}
+		</style>
+		<script>
+			function toRed(){
+				var red=document.getElementById('divv');
+				red.className='box'		
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input id="input1" type="button" value="变红" onclick="toRed()"/>
+		<div id="divv">			
+			
+		</div>
+	</body>
+</html>
